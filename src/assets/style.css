@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #555555;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body {
+  padding-bottom: 20px;
+}
+
+.is-abel {
+  font-family: 'Abel', sans-serif !important;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.bg-pri-blue {
+  background-color: #116193;
+}
+
+.bg-sec-blue {
+  background-color: #00E8E4;
+}
+
+.bg-grey {
+  background-color: #EBEBEB;
+}
+
+/* HEADER */
+.app__header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.app__header-text {
+  color: #00E8E4;
+}
+
+.app__search-input {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: block;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  background-color: #EBEBEB;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.app__search-input::-webkit-input-placeholder {
+  color: #116193;
+  font-family: 'Abel', sans-serif !important;
+}
+
+.app__search-input:-ms-input-placeholder {
+  color: #116193;
+  font-family: 'Abel', sans-serif !important;
+}
+
+.app__search-input::-ms-input-placeholder {
+  color: #116193;
+  font-family: 'Abel', sans-serif !important;
+}
+
+.app__search-input::placeholder {
+  color: #116193;
+  font-family: 'Abel', sans-serif !important;
+}
+
+/* RESULT */
+.app__movie-list {}
+
+.app__movie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #EBEBEB;
+  margin-bottom: 30px;
+}
+
+.app__movie-poster {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.app__movie-info {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.app__movie-header {
+  position: relative;
+}
+
+.app__movie-title {
+  background-color: #116193;
+  color: #00E8E4;
+  padding: 10px 0 5px 50px;
+}
+
+.app__movie-date {
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.app__movie-popularity {
+  position: absolute;
+  left: 5px;
+  bottom: -5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #00E8E4;
+  background-color: #116193;
+  color: #00E8E4;
+  font-size: 12px;
+}
+
+.app__movie-popularity::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #116193;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: -1;
+}
+
+.app__movie-content {
+  position: relative;
+  margin-top: 15px;
+  padding: 10px;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.app__movie-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 0;
+}
+
+.app__movie-genre-list {}
+
+.app__movie-genre-item {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #116193;
+  color: #116193;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+/* PAGINATION */
+.app__pagination {
+  display: block;
+  text-align: center;
+}
+
+.app__pagination-item {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.app__pagination-link {
+  display: inline-block;
+  font-family: 'Abel', sans-serif !important;
+  font-size: 1.3rem;
+  color: #116193 !important;
+}
+
+.app__pagination-link.active {
+  color: #00E8E4 !important;
+  font-size: 1.5rem;
+  border: 2px solid #00E8E4;
+  border-radius: 50%;
+  background-color: #116193;
+  padding: 5px 15px;
+  position: relative;
+}
+
+.app__pagination-link.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #116193;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: -1;
+}
+
+/* BREAKPOINT */
+@media only screen and (min-width:990px) {
+  html {
+    font-size: 16px;
+  }
+
+  /* RESULT */
+  .app__movie {
+    height: 400px;
+    margin-bottom: 50px;
+  }
+
+  .app__movie-poster {
+    width: 25%;
+    min-width: 25%;
+  }
+
+  .app__movie-title {
+    font-size: 2.5rem;
+    padding-left: 70px;
+  }
+
+  .app__movie-date {
+    font-size: 1.3rem;
+    margin-left: 70px;
+  }
+
+  .app__movie-popularity {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    bottom: 5%;
+    left: 10px;
+  }
+
+  .app__movie-content {
+    margin-top: 15px;
+    padding: 10px 30px;
+    overflow: hidden;
+  }
+
+  .app__movie-footer {
+    left: 30px;
+    bottom: 20px;
+  }
+
+  .app__movie-genre-item {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
