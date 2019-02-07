@@ -29,7 +29,6 @@
           :description="movie.overview"
           :vote_average="movie.vote_average"
           :date="movie.release_date"
-          :genres="movie.genre_ids"
         ></app-movies>
       </ul>
       <!-- PAGINATION -->
@@ -68,7 +67,7 @@ export default {
       configData: null,
       baseImageURL: null,
       keyword: "",
-      movieList: []
+      movieList: ""
     };
   },
   methods: {

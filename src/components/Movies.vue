@@ -44,11 +44,11 @@ export default {
     title: String,
     date: String,
     vote_average: Number,
-    description: String,
-    genres: Array
+    description: String
   },
   data() {
     return {
+      genres: [],
       genresNames: []
     };
   },
