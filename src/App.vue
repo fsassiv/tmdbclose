@@ -108,6 +108,7 @@ export default {
         });
     },
     runSearch(keyword, page = 1) {
+      this.movieCounter = "";
       let url = "".concat(
         this.baseUrl,
         "search/movie?api_key=",
