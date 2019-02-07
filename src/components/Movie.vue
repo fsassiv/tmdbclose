@@ -20,7 +20,7 @@
             <li class="app__single-detail">
               <p class="app__single-label">Idioma</p>
               <p class="app__single-value">
-                <span :key="l" v-for="l in lang">{{l.name}},</span>
+                <span :key="l.id" v-for="l in lang">{{l.name}},</span>
               </p>
             </li>
             <li class="app__single-detail">
