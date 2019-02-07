@@ -12,6 +12,7 @@
             :href="'https://www.themoviedb.org/movie/'+movieId"
             target="_blank"
             class="app__movie-link"
+            @click.prevent="getDetail"
           >{{title}}</a>
         </h3>
         <p class="app__movie-date">{{date}}</p>
@@ -53,7 +54,7 @@ export default {
     };
   },
   methods: {
-    getDrama() {
+    getGenre() {
       let apiKey = "3276fa51d16eb0a7c0fcb23665588bcd";
       let url = "".concat(
         "https://api.themoviedb.org/3/movie/",
@@ -78,10 +79,14 @@ export default {
         newGenreList.push(genreList[i].name);
       }
       this.genresNames = newGenreList;
+    },
+    getDetail() {
+      // console.log(id);
+      this.$emit("getSingleMovie");
     }
   },
   mounted() {
-    this.getDrama();
+    this.getGenre();
   }
 };
 </script>
