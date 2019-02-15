@@ -1,7 +1,7 @@
 <template>
   <li class="app__movie">
     <img
-      :src="'https://image.tmdb.org/t/p/w500'+posterUrl"
+      :src="'https://image.tmdb.org/t/p/w500'+opt.poster_path"
       alt="Image not found"
       class="app__movie-poster"
     >
@@ -9,16 +9,16 @@
       <div class="app__movie-header">
         <h3 class="app__movie-title is-abel">
           <a
-            :href="'https://www.themoviedb.org/movie/'+movieId"
+            :href="'https://www.themoviedb.org/movie/'+opt.id"
             target="_blank"
             class="app__movie-link"
             @click.prevent="getDetail"
-          >{{title}}</a>
+          >{{opt.title}}</a>
         </h3>
-        <p class="app__movie-date">{{date}}</p>
-        <button class="app__movie-popularity">{{vote_average}}</button>
+        <p class="app__movie-date">{{opt.release_date}}</p>
+        <button class="app__movie-popularity">{{opt.vote_average}}</button>
       </div>
-      <div class="app__movie-content">{{description}}</div>
+      <div class="app__movie-content">{{opt.overview}}</div>
       <div class="app__movie-footer">
         <ul class="app__movie-genre-list">
           <li :key="genre" v-for="genre in genresNames" class="app__movie-genre-item">{{genre}}</li>
@@ -40,12 +40,7 @@
 //api.themoviedb.org/3/movie/movieId?api_key=apiKey
 export default {
   props: {
-    movieId: Number,
-    posterUrl: String,
-    title: String,
-    date: String,
-    vote_average: Number,
-    description: String
+    opt: {}
   },
   data() {
     return {
@@ -58,7 +53,7 @@ export default {
       let apiKey = "3276fa51d16eb0a7c0fcb23665588bcd";
       let url = "".concat(
         "https://api.themoviedb.org/3/movie/",
-        this.movieId,
+        this.opt.id,
         "?api_key=",
         apiKey
       );

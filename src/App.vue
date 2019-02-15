@@ -24,31 +24,12 @@
           @getSingleMovie="getSingleMovie(movie.id)"
           :key="movie.id"
           v-for="movie in movieList.results"
-          :movie-id="movie.id"
-          :posterUrl="movie.poster_path"
-          :title="movie.title"
-          :description="movie.overview"
-          :vote_average="movie.vote_average"
-          :date="movie.release_date"
+          :opt="movie"
         ></app-movies>
       </ul>
       <!-- LOAD SINGLE RESULT -->
       <div v-if="singleMovie" class="app__single-movie">
-        <appMovie
-          :key="movie"
-          v-for="movie in movieCounter"
-          :title="singleMovie.original_title"
-          :date="singleMovie.release_date"
-          :sinopse="singleMovie.overview"
-          :posterUrl="singleMovie.poster_path"
-          :sit="singleMovie.status"
-          :budget="singleMovie.budget"
-          :total="singleMovie.revenue"
-          :dur="singleMovie.runtime"
-          :popularity="singleMovie.popularity"
-          :genres="singleMovie.genres"
-          :lang="singleMovie.spoken_languages"
-        ></appMovie>
+        <appMovie :key="movie" v-for="movie in movieCounter" :opt="singleMovie"></appMovie>
       </div>
       <!-- PAGINATION -->
       <ul v-if="movieList" class="app__pagination">
@@ -83,9 +64,8 @@ export default {
       apiKey: "3276fa51d16eb0a7c0fcb23665588bcd",
       configData: null,
       baseImageURL: null,
-      keyword: "",
-      movieList: "",
-      movieCounter: "",
+      movieList: [],
+      movieCounter: [],
       singleMovie: "",
       movieId: ""
     };
